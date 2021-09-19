@@ -1,12 +1,13 @@
-import React from 'react';
-import Link from "next/link";
+import React from 'react'
+import Link from 'next/link'
+import { NavIcon, NavButton } from './styles'
 
-const NavButton = (props:any) => (
-    <Link href={props.path}>
-        <div className="NavButton">
-            <div className="Icon">{props.icon}</div>
-        </div>
-    </Link>
-);
+const NavButtonComponent = (props: any) => (
+  <Link passHref href={props.path}>
+    <NavButton>
+      <NavIcon>{props.icon}</NavIcon>
+    </NavButton>
+  </Link>
+)
 
-export default NavButton;
+export default NavButtonComponent
