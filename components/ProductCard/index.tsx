@@ -12,6 +12,7 @@ import {
   ProductProfileImage,
   ProductCardFavorWrapper,
   ProductCardImageFavorIcon,
+  ProductCardCommentText,
 } from './styles'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faHeart as rHear } from '@fortawesome/free-regular-svg-icons'
@@ -59,7 +60,9 @@ const ProductCardComponent = (props: ProductCardComponentProps) => {
           {props.product.product_price}
         </ProductCardImagePriceText>
         <ProductCardImageFavorIcon
-          onClick={() => handleGalleryData(props.product)}
+          onClick={() => {
+            handleGalleryData(props.product)
+          }}
           size="lg"
           icon={rHear}
         />
@@ -81,6 +84,7 @@ const ProductCardComponent = (props: ProductCardComponentProps) => {
             <div key={tag}>{`#${tag}`}</div>
           ))}
         </ProductCardTagWrapper>
+        <ProductCardCommentText>View 12 comments</ProductCardCommentText>
       </ProductCardTextContainer>
     </ProductCardContainer>
   )

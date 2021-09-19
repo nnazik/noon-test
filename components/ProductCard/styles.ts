@@ -7,7 +7,7 @@ export const ProductCardContainer = styled.div`
   flex-direction: column;
   width: 100%;
   border-bottom: darkgrey 1px solid;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 `;
 
 export const ProductCardProfileImageContainer = styled.div`
@@ -44,6 +44,13 @@ export const ProductCardTagWrapper = styled.div`
 `;
 
 export const ProductCardDescriptionText = styled.div`
+  font-size: 12px;
+  width: 100%;
+  font-weight: normal;
+  color: #868686;
+`;
+
+export const ProductCardCommentText = styled.p`
   font-size: 12px;
   width: 100%;
   font-weight: normal;

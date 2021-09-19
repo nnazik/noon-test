@@ -38,7 +38,7 @@ export const FavorProductTextDescriptionText = styled.p`
   font-size: 12px;
   width: 100%;
   font-weight: normal;
-  color: #a3a3a3;
+  color: #868686;
 `;
 
 export const FavorProductRemoveIcon = styled(FontAwesomeIcon)`
