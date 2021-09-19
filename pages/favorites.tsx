@@ -25,12 +25,17 @@ const Favorites: NextPage = () => {
               </Col>
             ))}
         </Row>
-        <FavorProductContainer style={{ fontSize: '20px', fontWeight: 'bold' }}>
-          {productData.length == 0 && 'No Favor Available'}
-        </FavorProductContainer>
+        {productData.length == 0 && (
+          <FavorProductContainer
+            style={{ fontSize: '20px', fontWeight: 'bold' }}
+          >
+            No ❤️ Favorites Available
+          </FavorProductContainer>
+        )}
       </Container>
       <NavBar navButtons={navButtons} />
     </>
   )
 }
+
 export default Favorites
