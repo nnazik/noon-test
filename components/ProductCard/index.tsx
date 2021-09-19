@@ -17,14 +17,14 @@ import {
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faHeart as rHear } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useAuth } from '../../context/ProductContex'
+import { useProduct } from '../../context/ProductContext'
 
 interface ProductCardComponentProps {
   product: any
 }
 
 const ProductCardComponent = (props: ProductCardComponentProps) => {
-  const { handleGalleryData } = useAuth()
+  const { handleProductData } = useProduct()
 
   return (
     <ProductCardContainer>
@@ -61,7 +61,7 @@ const ProductCardComponent = (props: ProductCardComponentProps) => {
         </ProductCardImagePriceText>
         <ProductCardImageFavorIcon
           onClick={() => {
-            handleGalleryData(props.product)
+            handleProductData(props.product)
           }}
           size="lg"
           icon={rHear}

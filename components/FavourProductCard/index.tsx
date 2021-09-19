@@ -7,7 +7,7 @@ import {
   FavorProductTextDescriptionText,
   FavorProductTextWrapper,
 } from './styles'
-import { useAuth } from '../../context/ProductContex'
+import { useProduct } from '../../context/ProductContext'
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
 
 interface FavorProductCardComponentProps {
@@ -15,7 +15,7 @@ interface FavorProductCardComponentProps {
 }
 
 const FavorProductCard = (props: FavorProductCardComponentProps) => {
-  const { handleGalleryRemove } = useAuth()
+  const { handleProductDataRemove } = useProduct()
   return (
     <FavorProductContainer>
       <Image
@@ -40,7 +40,7 @@ const FavorProductCard = (props: FavorProductCardComponentProps) => {
       <FavorProductRemoveIcon
         icon={faWindowClose}
         size="2x"
-        onClick={() => handleGalleryRemove(props.product.Id)}
+        onClick={() => handleProductDataRemove(props.product.Id)}
       />
     </FavorProductContainer>
   )

@@ -2,12 +2,13 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import navButtons from '../components/NavBar/NavButtonList'
 import NavBar from '../components/NavBar/NavBar'
-import { useAuth } from '../context/ProductContex'
+import { useProduct } from '../context/ProductContext'
 import FavourProductCard from '../components/FavourProductCard'
 import { Container, Row, Col } from 'react-grid-system'
+import { FavorProductContainer } from '../components/FavourProductCard/styles'
 
 const Favorites: NextPage = () => {
-  const { galleryData } = useAuth()
+  const { productData } = useProduct()
   return (
     <>
       <Head>
@@ -17,14 +18,16 @@ const Favorites: NextPage = () => {
       </Head>
       <Container style={{ padding: '20px' }}>
         <Row>
-          {galleryData &&
-            galleryData.map((product: any) => (
+          {productData &&
+            productData.map((product: any) => (
               <Col sm={6} key={product.Id}>
                 <FavourProductCard product={product}></FavourProductCard>
               </Col>
             ))}
         </Row>
-        <div>{galleryData.length == 0 && 'No Favor Available'}</div>
+        <FavorProductContainer style={{ fontSize: '20px', fontWeight: 'bold' }}>
+          {productData.length == 0 && 'No Favor Available'}
+        </FavorProductContainer>
       </Container>
       <NavBar navButtons={navButtons} />
     </>
